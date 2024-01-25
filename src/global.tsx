@@ -1,19 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
+import DelaGothicOne from './fonts/DelaGothicOne-Regular.ttf';
+import BricolageGrotesque from './fonts/BricolageGrotesque-VariableFont.ttf';
+import InstrumentSerif from './fonts/InstrumentSerif-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Dela Gothic One';
-    src: url('./fonts/DelaGothicOne/DelaGothicOne-Regular.ttf') format('truetype');
+    src: url(${DelaGothicOne}) format('truetype');
   }
 
   @font-face {
     font-family: 'Bricolage Grotesque';
-    src: url('./fonts/BricolageGrotesque/BricolageGrotesque-VariableFont.ttf') format('truetype');
+    src: url(${BricolageGrotesque}) format('truetype');
   }
 
   @font-face {
     font-family: 'Instrument Serif';
-    src: url('./fonts/InstrumentSerif/InstrumentSerif-Regular.ttf') format('truetype');
+    src: url(${InstrumentSerif}) format('truetype');
   }
 
   body {
