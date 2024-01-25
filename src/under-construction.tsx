@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StripedBorder = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0.75em;
   left: 0.75em;
   padding: 0.4em 0;
