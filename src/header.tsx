@@ -8,7 +8,7 @@ const Style = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding: 3em 3em 1em 3em;
-  background-color: #ffffff;
+  background-color: #fff;
 `;
 
 const MainArea = styled.div`
@@ -17,8 +17,7 @@ const MainArea = styled.div`
   justify-content: space-between;
   gap: 1em;
   max-width: 100%;
-  color: rgb(69, 73, 108);
-  transform: rotate(-2deg);
+  color: var(--primary-color);
 
   @media (max-width: 48.5em) {
     flex-direction: column;
@@ -32,7 +31,7 @@ const ProfileImg = styled.img`
   height: 16em;
   border-radius: 7.5em;
   border-style: solid;
-  border-color: rgb(197, 193, 158);
+  border-color: var(--secondary-color);
   border-width: 0.5em;
   margin: 1em;
   transform: rotate(4deg);
@@ -54,6 +53,8 @@ const TextArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+
+  transform: rotate(-2deg);
 `;
 
 const NameHeader = styled.div`

@@ -32,7 +32,7 @@ const Style = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-color: rgb(197, 193, 158);
+  border-color: var(--secondary-color);
   border-style: solid;
   border-radius: 2em;
   border-width: 3px;
@@ -46,8 +46,8 @@ const Header = styled.div`
   overflow: hidden;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  color: rgb(69, 73, 108);
-  background: rgb(197, 193, 158);
+  color: var(--primary-color);
+  background: var(--secondary-color);
   font-size: 1.75em;
   text-align: right;
   font-family: 'Instrument Serif';
@@ -61,7 +61,7 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(69, 73, 108);
+  background: var(--primary-color);
   border-radius: 100%;
 `;
 
@@ -74,8 +74,8 @@ const Content = styled.div`
   font-family: 'Bricolage Grotesque';
   font-weight: 100;
   font-size: 1.25em;
-  background: rgb(69, 73, 108);
-  color: rgb(197, 193, 158);
+  background: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.75em;
 `;
 

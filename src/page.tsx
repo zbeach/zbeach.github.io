@@ -7,7 +7,7 @@ const Style = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #45496c;
+  background-color: var(--primary-color);
 `;
 
 export const Page = () => (

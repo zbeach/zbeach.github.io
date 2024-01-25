@@ -14,7 +14,6 @@ const StripedBorder = styled.div`
   );
   border-radius: 0.5em;
   box-shadow: 4px 4px 16px -6px rgba(0, 0, 0, 0.75);
-  transform: rotate(3deg);
   background: repeating-linear-gradient(
     -45deg,
     yellow,

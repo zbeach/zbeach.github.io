@@ -9,7 +9,7 @@ const Style = styled.div`
   gap: 2em;
   margin-top: 1em;
   padding: 3em;
-  color: rgb(197, 193, 158);
+  color: var(--secondary-color);
 `;
 
 const Preface = styled.div`
