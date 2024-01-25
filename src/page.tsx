@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Header } from './header';
 import { PageBody } from './page-body';
+import { UnderConstruction } from './under-construction';
 
 const Style = styled.div`
   display: flex;
@@ -13,5 +14,7 @@ export const Page = () => (
   <Style>
     <Header />
     <PageBody />
+
+    <UnderConstruction />
   </Style>
 );

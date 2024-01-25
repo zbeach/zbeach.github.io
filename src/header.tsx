@@ -25,6 +25,7 @@ const MainArea = styled.div`
   @media (max-width: 48.5em) {
     flex-direction: column;
     align-items: center;
+    padding-top: 3em;
   }
 `;
 
