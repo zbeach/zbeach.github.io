@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ZackImg from './images/zack.jpg';
+import InstagramIcon from './images/Instagram_Glyph_Gradient.svg';
 import GitHubMark from './images/github-mark.svg';
 import LinkedInIcon from './images/linkedin.png';
 
@@ -110,6 +111,9 @@ export const Header = () => (
       <ProfileImg src={ZackImg} alt='Zack Beach' />
     </MainArea>
     <ExternalLinks>
+      <a href='https://www.instagram.com/zack_beach/'>
+        <img src={InstagramIcon} />
+      </a>
       <a href='http://github.com/zbeach'>
         <img src={GitHubMark} />
       </a>
