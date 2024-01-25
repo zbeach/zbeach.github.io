@@ -17,9 +17,7 @@ const MainArea = styled.div`
   justify-content: space-between;
   gap: 1em;
   max-width: 100%;
-
   color: rgb(69, 73, 108);
-
   transform: rotate(-2deg);
 
   @media (max-width: 48.5em) {

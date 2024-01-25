@@ -4,7 +4,7 @@ const StripedBorder = styled.div`
   position: absolute;
   top: 0.75em;
   left: 0.75em;
-  padding: 0.4em;
+  padding: 0.4em 0;
   background: linear-gradient(
     90deg,
     black 0%,
@@ -33,7 +33,6 @@ const Style = styled.div`
   font-size: 0.5em;
   font-family: 'Bricolage Grotesque';
   padding: 0.75em 2em;
-  border-radius: 0.5em;
 `;
 
 export const UnderConstruction = () => (
