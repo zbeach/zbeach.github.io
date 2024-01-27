@@ -54,6 +54,7 @@ const TextArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 1em;
 
   transform: rotate(-2deg);
 `;
@@ -62,6 +63,7 @@ const NameHeader = styled.div`
   font-family: 'Bricolage Grotesque';
   font-size: 8em;
   font-weight: 900;
+  line-height: 0.9em;
   margin: 0;
 
   @media (max-width: 48.5em) {
@@ -69,7 +71,7 @@ const NameHeader = styled.div`
   }
 
   @media (max-width: 37em) {
-    font-size: 3em;
+    font-size: 6em;
   }
 `;
 

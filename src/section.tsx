@@ -26,6 +26,11 @@ const Wrapper = styled.div`
     transform: scale(0.99) rotate(2deg);
     box-shadow: 1px 1px 1px rgb(43, 46, 68);
   }
+
+  // This is where it becomes one column. No need for rotation on the grid at this width.
+  @media (max-width: 43.4375em) {
+    transform: rotate(calc(var(--rotation) - 2deg));
+  }
 `;
 
 const Style = styled.div`

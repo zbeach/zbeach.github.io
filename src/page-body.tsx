@@ -30,6 +30,11 @@ const InterestsAndWork = styled.div`
   align-content: start;
 
   transform: rotate(-2deg);
+
+  // This is where it becomes one column. No need for rotation on the grid at this width.
+  @media (max-width: 43.4375em) {
+    transform: rotate(0deg);
+  }
 `;
 
 export const PageBody = () => (
