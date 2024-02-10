@@ -1,3 +1,4 @@
+import Draggable from 'react-draggable';
 import styled from 'styled-components';
 
 const StripedBorder = styled.div`
@@ -23,7 +24,7 @@ const StripedBorder = styled.div`
   );
 `;
 
-const Style = styled.div`
+const Inside = styled.div`
   position: relative;
   background: yellow;
   display: flex;
@@ -32,12 +33,15 @@ const Style = styled.div`
   font-size: 0.5em;
   font-family: 'Bricolage Grotesque';
   padding: 0.75em 2em;
+  cursor: grab;
 `;
 
 export const UnderConstruction = () => (
-  <StripedBorder>
-    <Style>
-      <h1>👷‍♂️ Under Construction</h1>
-    </Style>
-  </StripedBorder>
+  <Draggable>
+    <StripedBorder>
+      <Inside>
+        <h1>👷‍♂️ Under Construction</h1>
+      </Inside>
+    </StripedBorder>
+  </Draggable>
 );

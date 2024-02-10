@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Section } from './section';
+import { Content } from './content';
 
 const Style = styled.div`
   flex-grow: 1;
@@ -38,35 +39,41 @@ const InterestsAndWork = styled.div`
 `;
 
 export const PageBody = () => (
-  <Style>
-    <Preface>{'Here are some of the things I do and/or enjoy.'}</Preface>
-    <InterestsAndWork>
-      <Section
-        icon='🏙️'
-        header='Urbanism'
-        description="North America's car-centric development pattern is a disaster. Let's fix it!"
-      />
-      <Section
-        icon='🐉'
-        header='Learning Mandarin'
-        description='你好！我学习中文！'
-      />
-      <Section
-        icon='👨🏼‍💻'
-        header='Web development'
-        description='I work as a software engineer at a company called Ozmo.'
-      />
-      <Section icon='🥟' header='Food' description='I love eating very much.' />
-      <Section
-        icon='💰'
-        header='Personal finance'
-        description='Sometimes I obsess over budgeting and investing.'
-      />
-      <Section
-        icon='🎮'
-        header='Video games'
-        description="I play video games. I don't also make them."
-      />
-    </InterestsAndWork>
-  </Style>
+  <Content>
+    <Style>
+      <Preface>{'Here are some of the things I do and/or enjoy.'}</Preface>
+      <InterestsAndWork>
+        <Section
+          icon='🏙️'
+          header='Urbanism'
+          description="North America's car-centric development pattern is a disaster. Let's fix it!"
+        />
+        <Section
+          icon='🐉'
+          header='Learning Mandarin'
+          description='你好！我学习中文！'
+        />
+        <Section
+          icon='👨🏼‍💻'
+          header='Web development'
+          description='I work as a software engineer at a company called Ozmo.'
+        />
+        <Section
+          icon='🥟'
+          header='Food'
+          description='I love eating very much.'
+        />
+        <Section
+          icon='💰'
+          header='Personal finance'
+          description='Sometimes I obsess over budgeting and investing.'
+        />
+        <Section
+          icon='🎮'
+          header='Video games'
+          description="I play video games. I don't also make them."
+        />
+      </InterestsAndWork>
+    </Style>
+  </Content>
 );

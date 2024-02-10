@@ -3,11 +3,11 @@ import ZackImg from './images/zack.jpg';
 import InstagramIcon from './images/Instagram_Glyph_Gradient.svg';
 import GitHubMark from './images/github-mark.svg';
 import LinkedInIcon from './images/linkedin.png';
+import { Content } from './content';
 
 const Style = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 3em 3em 1em 3em;
   background-color: #fff;
 `;
@@ -102,26 +102,28 @@ const ExternalLinks = styled.div`
 
 export const Header = () => (
   <Style>
-    <MainArea>
-      <TextArea>
-        <NameHeader>{'Zack Beach'}</NameHeader>
-        <AccompanyingText>
-          I'm an urbanism advocate and software developer in Blacksburg,
-          Virginia, USA.
-        </AccompanyingText>
-      </TextArea>
-      <ProfileImg src={ZackImg} alt='Zack Beach' />
-    </MainArea>
-    <ExternalLinks>
-      <a href='https://www.instagram.com/zack_beach/'>
-        <img src={InstagramIcon} />
-      </a>
-      <a href='http://github.com/zbeach'>
-        <img src={GitHubMark} />
-      </a>
-      <a href='https://www.linkedin.com/in/zbeach/'>
-        <img src={LinkedInIcon} />
-      </a>
-    </ExternalLinks>
+    <Content>
+      <MainArea>
+        <TextArea>
+          <NameHeader>{'Zack Beach'}</NameHeader>
+          <AccompanyingText>
+            I'm an urbanism advocate and software developer in Blacksburg,
+            Virginia, USA.
+          </AccompanyingText>
+        </TextArea>
+        <ProfileImg src={ZackImg} alt='Zack Beach' />
+      </MainArea>
+      <ExternalLinks>
+        <a href='https://www.instagram.com/zack_beach/'>
+          <img src={InstagramIcon} />
+        </a>
+        <a href='http://github.com/zbeach'>
+          <img src={GitHubMark} />
+        </a>
+        <a href='https://www.linkedin.com/in/zbeach/'>
+          <img src={LinkedInIcon} />
+        </a>
+      </ExternalLinks>
+    </Content>
   </Style>
 );
