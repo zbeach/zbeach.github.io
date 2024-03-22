@@ -24,7 +24,7 @@ const MainArea = styled.div`
   justify-content: space-between;
   gap: 1em;
   max-width: 100%;
-  color: var(--secondary-color);
+  color: var(--default-tertiary-color);
 
   @media (max-width: 48.5em) {
     flex-direction: column;
@@ -37,7 +37,7 @@ const ProfileImg = styled.img`
   height: 16em;
   border-radius: 7.5em;
   border-style: solid;
-  border-color: var(--secondary-color);
+  border-color: var(--default-tertiary-color);
   border-width: 0.5em;
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.8);
   margin: 1em;
@@ -107,7 +107,7 @@ const ExternalLinks = styled.div`
   align-items: center;
   padding: 0.5em 1.25em;
   border-radius: 999em;
-  background-color: var(--secondary-color);
+  background-color: var(--default-tertiary-color);
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.8);
 
   a {

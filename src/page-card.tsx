@@ -53,7 +53,7 @@ const Header = styled.div`
   overflow: hidden;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  color: rgb(224, 235, 227);
+  color: var(--default-tertiary-color);
   background: var(--primary-color);
   font-size: 1.5em;
   text-align: right;
@@ -68,7 +68,7 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(224, 235, 227);
+  background: var(--default-tertiary-color);
   border-radius: 100%;
 `;
 
@@ -81,7 +81,7 @@ const Content = styled.div`
   font-family: 'Bricolage Grotesque';
   font-weight: 100;
   font-size: 1.25em;
-  background: rgb(224, 235, 227);
+  background: var(--default-tertiary-color);
   color: var(--primary-color);
   padding: 0.75em;
 `;
