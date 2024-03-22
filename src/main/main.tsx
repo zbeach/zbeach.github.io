@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Header } from './header';
-import { UnderConstruction } from './under-construction';
-import { PageData } from './types';
+import { Header } from '../header';
+import { Body } from './body';
+import { UnderConstruction } from '../under-construction';
 
 const Style = styled.div`
   display: flex;
@@ -15,11 +15,12 @@ const Centered = styled.div`
   justify-content: center;
 `;
 
-export const Page = (props: PageData) => (
+export const Main = () => (
   <Style>
-    <Header variant='small' />
-    <Centered>{''}</Centered>
-
+    <Header variant='big' />
+    <Centered>
+      <Body />
+    </Centered>
     <UnderConstruction />
   </Style>
 );

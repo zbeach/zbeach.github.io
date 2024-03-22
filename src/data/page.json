@@ -1,0 +1,38 @@
+[
+  {
+    "pageKey": "urbanism",
+    "icon": "🏙️",
+    "header": "Urbanism",
+    "description": "North America's car-centric development pattern is a disaster. Let's fix it!"
+  },
+  {
+    "pageKey": "mandarin",
+    "icon": "🐉",
+    "header": "Learning Mandarin",
+    "description": "你好！我学习中文！"
+  },
+  {
+    "pageKey": "dev",
+    "icon": "👨🏼‍💻",
+    "header": "Web development",
+    "description": "I work as a software engineer at a company called Ozmo."
+  },
+  {
+    "pageKey": "food",
+    "icon": "🥟",
+    "header": "Food",
+    "description": "I love eating very much."
+  },
+  {
+    "pageKey": "personal-finance",
+    "icon": "💰",
+    "header": "Personal finance",
+    "description": "Sometimes I obsess over budgeting and investing."
+  },
+  {
+    "pageKey": "video-games",
+    "icon": "🎮",
+    "header": "Video games",
+    "description": "I play video games. I don't also make them."
+  }
+]

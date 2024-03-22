@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-const Wrapper = styled.div`
+import { PageData } from './types';
+
+const Wrapper = styled(Link)`
   --rotation: ${() =>
     css`
       ${Math.random() * 6 - 2}deg
@@ -10,21 +13,20 @@ const Wrapper = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 6px;
   border-radius: calc(2em + 6px);
-  box-shadow: 1px 1px 1px rgb(43, 46, 68);
+  text-decoration: none;
   transform: rotate(var(--rotation));
   transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
 
   &:hover {
     transform: scale(1.01) rotate(2deg);
-    box-shadow: 4px 4px 4px rgb(43, 46, 68);
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.8);
     cursor: pointer;
   }
 
   &:active {
     transform: scale(0.99) rotate(2deg);
-    box-shadow: 1px 1px 1px rgb(43, 46, 68);
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.8);
   }
 
   // This is where it becomes one column. No need for rotation on the grid at this width.
@@ -37,7 +39,7 @@ const Style = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-color: var(--secondary-color);
+  border-color: var(--primary-color);
   border-style: solid;
   border-radius: 2em;
   border-width: 3px;
@@ -51,11 +53,11 @@ const Header = styled.div`
   overflow: hidden;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  color: var(--primary-color);
-  background: var(--secondary-color);
-  font-size: 1.75em;
+  color: rgb(224, 235, 227);
+  background: var(--primary-color);
+  font-size: 1.5em;
   text-align: right;
-  font-family: 'Instrument Serif';
+  font-family: 'Spot';
   padding: 0.25em 0.5em;
 `;
 
@@ -66,7 +68,7 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary-color);
+  background: rgb(224, 235, 227);
   border-radius: 100%;
 `;
 
@@ -79,21 +81,13 @@ const Content = styled.div`
   font-family: 'Bricolage Grotesque';
   font-weight: 100;
   font-size: 1.25em;
-  background: var(--primary-color);
-  color: var(--secondary-color);
+  background: rgb(224, 235, 227);
+  color: var(--primary-color);
   padding: 0.75em;
 `;
 
-export const Section = ({
-  icon,
-  header,
-  description,
-}: {
-  icon: string;
-  header: string;
-  description: string;
-}) => (
-  <Wrapper>
+export const PageCard = ({ pageKey, icon, header, description }: PageData) => (
+  <Wrapper to={`/${pageKey}`}>
     <Style>
       <Header>
         <Icon>{icon}</Icon>
