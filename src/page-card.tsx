@@ -26,7 +26,7 @@ const Wrapper = styled(Link)`
 
   &:active {
     transform: scale(0.99) rotate(2deg);
-    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.8);
   }
 
   // This is where it becomes one column. No need for rotation on the grid at this width.
