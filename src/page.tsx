@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Header } from './header';
-import { UnderConstruction } from './under-construction';
 import { PageData } from './types';
 
 const Style = styled.div`
@@ -19,7 +18,5 @@ export const Page = (props: PageData) => (
   <Style>
     <Header variant='small' />
     <Centered>{''}</Centered>
-
-    <UnderConstruction />
   </Style>
 );

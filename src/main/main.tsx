@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Header } from '../header';
 import { Body } from './body';
-import { UnderConstruction } from '../under-construction';
 
 const Style = styled.div`
   display: flex;
@@ -21,6 +20,5 @@ export const Main = () => (
     <Centered>
       <Body />
     </Centered>
-    <UnderConstruction />
   </Style>
 );
