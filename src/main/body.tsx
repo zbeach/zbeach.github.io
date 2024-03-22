@@ -33,13 +33,6 @@ const Navigation = styled.div`
   grid-template-columns: repeat(auto-fill, 18em);
   justify-content: center;
   align-content: start;
-
-  transform: rotate(-2deg);
-
-  // This is where it becomes one column. No need for rotation on the grid at this width.
-  @media (max-width: 43.4375em) {
-    transform: rotate(0deg);
-  }
 `;
 
 export const Body = () => (

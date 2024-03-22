@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 import ZackImg from './images/zack.jpg';
+import SqueakIn from './sounds/squeak-1.m4a';
+import SqueakOut from './sounds/squeak-2.m4a';
 import InstagramIcon from './images/Instagram_Glyph_Gradient.svg';
 import GitHubMark from './images/github-mark.svg';
 import LinkedInIcon from './images/linkedin.png';
 import { Content } from './content';
+
+import { useState } from 'react';
+
+const squeakIn = new Audio(SqueakIn);
+const squeakOut = new Audio(SqueakOut);
 
 type HeaderVariant = 'big' | 'small';
 
@@ -14,7 +21,7 @@ type Props = {
 const Style = styled.div`
   display: flex;
   justify-content: center;
-  padding: 3em 3em 1em 3em;
+  padding: 3em 3em 2em 3em;
   background-color: var(--primary-color);
 `;
 
@@ -39,9 +46,29 @@ const ProfileImg = styled.img`
   border-style: solid;
   border-color: var(--default-tertiary-color);
   border-width: 0.5em;
-  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 10px 10px 0px 0px rgba(150, 179, 157, 1),
+    9px 9px 0px 0px rgba(150, 179, 157, 1),
+    8px 8px 0px 0px rgba(150, 179, 157, 1),
+    7px 7px 0px 0px rgba(150, 179, 157, 1),
+    6px 6px 0px 0px rgba(150, 179, 157, 1),
+    5px 5px 0px 0px rgba(150, 179, 157, 1),
+    4px 4px 0px 0px rgba(150, 179, 157, 1),
+    3px 3px 0px 0px rgba(150, 179, 157, 1),
+    2px 2px 0px 0px rgba(150, 179, 157, 1),
+    1px 1px 0px 0px rgba(150, 179, 157, 1);
   margin: 1em;
   transform: rotate(4deg);
+  transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+
+  &:hover {
+    cursor: grab;
+  }
+
+  &:active {
+    box-shadow: 0px 0px 0px 0px rgba(150, 179, 157, 1);
+
+    transform: translate(10px, 10px) rotate(4deg);
+  }
 
   @media (max-width: 48.5em) {
     width: 12em;
@@ -108,7 +135,14 @@ const ExternalLinks = styled.div`
   padding: 0.5em 1.25em;
   border-radius: 999em;
   background-color: var(--default-tertiary-color);
-  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 8px 8px 0px 0px rgba(150, 179, 157, 1),
+    7px 7px 0px 0px rgba(150, 179, 157, 1),
+    6px 6px 0px 0px rgba(150, 179, 157, 1),
+    5px 5px 0px 0px rgba(150, 179, 157, 1),
+    4px 4px 0px 0px rgba(150, 179, 157, 1),
+    3px 3px 0px 0px rgba(150, 179, 157, 1),
+    2px 2px 0px 0px rgba(150, 179, 157, 1),
+    1px 1px 0px 0px rgba(150, 179, 157, 1);
 
   a {
     display: flex;
@@ -122,40 +156,64 @@ const ExternalLinks = styled.div`
   }
 `;
 
-export const Header = ({ variant }: Props) => (
-  <Style>
-    <Content>
-      <MainArea>
-        <TextArea>
-          <NameHeader {...{ variant }}>{'Zack Beach'}</NameHeader>
+export const Header = ({ variant }: Props) => {
+  const [playingAudio, setPlayingAudio] = useState(
+    null as HTMLAudioElement | null
+  );
+
+  const playSqueak = (sound: 'in' | 'out') => {
+    if (playingAudio) {
+      playingAudio.pause();
+      playingAudio.currentTime = 0;
+    }
+
+    const audio = sound === 'in' ? squeakIn : squeakOut;
+    setPlayingAudio(audio);
+    audio.play();
+  };
+
+  return (
+    <Style>
+      <Content>
+        <MainArea>
+          <TextArea>
+            <NameHeader {...{ variant }}>{'Zack Beach'}</NameHeader>
+            {variant === 'big' && (
+              <AccompanyingText>
+                I'm an urbanism advocate and software developer in Blacksburg,
+                Virginia, USA.
+              </AccompanyingText>
+            )}
+          </TextArea>
           {variant === 'big' && (
-            <AccompanyingText>
-              I'm an urbanism advocate and software developer in Blacksburg,
-              Virginia, USA.
-            </AccompanyingText>
+            <ProfileImg
+              src={ZackImg}
+              alt='Zack Beach'
+              onMouseDown={() => playSqueak('in')}
+              onMouseUp={() => playSqueak('out')}
+            />
           )}
-        </TextArea>
-        {variant === 'big' && <ProfileImg src={ZackImg} alt='Zack Beach' />}
-      </MainArea>
-      <ExternalLinks>
-        <a
-          href='https://www.instagram.com/zack_beach/'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src={InstagramIcon} alt='Instagram' />
-        </a>
-        <a href='https://github.com/zbeach' target='_blank' rel='noreferrer'>
-          <img src={GitHubMark} alt='GitHub' />
-        </a>
-        <a
-          href='https://www.linkedin.com/in/zbeach/'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src={LinkedInIcon} alt='LinkedIn' />
-        </a>
-      </ExternalLinks>
-    </Content>
-  </Style>
-);
+        </MainArea>
+        <ExternalLinks>
+          <a
+            href='https://www.instagram.com/zack_beach/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <img src={InstagramIcon} alt='Instagram' />
+          </a>
+          <a href='https://github.com/zbeach' target='_blank' rel='noreferrer'>
+            <img src={GitHubMark} alt='GitHub' />
+          </a>
+          <a
+            href='https://www.linkedin.com/in/zbeach/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <img src={LinkedInIcon} alt='LinkedIn' />
+          </a>
+        </ExternalLinks>
+      </Content>
+    </Style>
+  );
+};

@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     // Colors
     --default-primary-color: rgb(98, 102, 134);
     --default-secondary-color: rgb(208, 235, 215);
+    --default-secondary-color-dark: rgb(150, 179, 157);
     --default-tertiary-color: rgb(224, 235, 227);
 
     --old-default-primary-color: rgb(69, 73, 108);
