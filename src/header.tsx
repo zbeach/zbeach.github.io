@@ -145,7 +145,7 @@ export const Header = ({ variant }: Props) => (
         >
           <img src={InstagramIcon} alt='Instagram' />
         </a>
-        <a href='http://github.com/zbeach' target='_blank' rel='noreferrer'>
+        <a href='https://github.com/zbeach' target='_blank' rel='noreferrer'>
           <img src={GitHubMark} alt='GitHub' />
         </a>
         <a
