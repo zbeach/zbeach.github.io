@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ZackImg from './images/zack.jpg';
 import SqueakIn from './sounds/squeak-1.m4a';
 import SqueakOut from './sounds/squeak-2.m4a';
@@ -8,6 +8,7 @@ import LinkedInIcon from './images/linkedin.png';
 import { Content } from './content';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const squeakIn = new Audio(SqueakIn);
 const squeakOut = new Audio(SqueakOut);
@@ -94,27 +95,29 @@ const TextArea = styled.div`
   transform: rotate(-2deg);
 `;
 
-const NameHeader = styled.div<Props>`
+const NameHeader = styled(Link)<Props>`
   font-family: 'Spot';
   line-height: 0.9em;
   margin: 0;
+  text-decoration: none;
+  color: var(--default-tertiary-color);
 
   ${({ variant }) =>
     variant === 'big'
-      ? `
-    font-size: 8em;
+      ? css`
+          font-size: 8em;
 
-    @media (max-width: 48.5em) {
-      font-size: 6em;
-    }
+          @media (max-width: 48.5em) {
+            font-size: 6em;
+          }
 
-    @media (max-width: 37em) {
-      font-size: 6em;
-    }
-  `
-      : `
-    font-size: 4em;
-  `}
+          @media (max-width: 37em) {
+            font-size: 6em;
+          }
+        `
+      : css`
+          font-size: 4em;
+        `}
 `;
 
 const AccompanyingText = styled.div`
@@ -181,7 +184,9 @@ export const Header = ({ variant }: Props) => {
       <Content>
         <MainArea>
           <TextArea>
-            <NameHeader {...{ variant }}>{'Zack Beach'}</NameHeader>
+            <NameHeader to='/' {...{ variant }}>
+              {'Zack Beach'}
+            </NameHeader>
             {variant === 'big' && (
               <AccompanyingText>
                 I'm an urbanism advocate and software developer in Blacksburg,
@@ -193,6 +198,7 @@ export const Header = ({ variant }: Props) => {
             <ProfileImg
               src={ZackImg}
               alt='Zack Beach'
+              draggable={false}
               onMouseDown={() => playSqueak('in')}
               onMouseUp={() => playSqueak('out')}
             />
