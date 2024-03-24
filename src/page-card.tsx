@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 import { PageData } from './types';
 
@@ -15,13 +16,17 @@ const Wrapper = styled(Link)`
   width: 100%;
   border-radius: calc(2em + 6px);
   text-decoration: none;
+  cursor: pointer;
   transform: rotate(var(--rotation));
   transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
 
-  &:hover {
+  &.desktop:hover {
     transform: scale(1.01) rotate(2deg);
     box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.8);
-    cursor: pointer;
+  }
+
+  &.mobile {
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.8);
   }
 `;
 
@@ -77,7 +82,7 @@ const Content = styled.div`
 `;
 
 export const PageCard = ({ pageKey, icon, header, description }: PageData) => (
-  <Wrapper to={`/${pageKey}`}>
+  <Wrapper className={isMobile ? 'mobile' : 'desktop'} to={`/${pageKey}`}>
     <Style>
       <Header>
         <Icon>{icon}</Icon>

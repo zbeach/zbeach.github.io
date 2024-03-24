@@ -63,16 +63,6 @@ const ProfileImg = styled.img`
   transform: rotate(4deg);
   transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
 
-  &:hover {
-    cursor: grab;
-  }
-
-  &:active {
-    box-shadow: 0px 0px 0px 0px rgba(150, 179, 157, 1);
-
-    transform: translate(12px, 12px) rotate(4deg);
-  }
-
   @media (max-width: 48.5em) {
     width: 12em;
     height: 12em;
@@ -163,67 +153,44 @@ const ExternalLinks = styled.div`
   }
 `;
 
-export const Header = ({ variant }: Props) => {
-  const [playingAudio, setPlayingAudio] = useState(
-    null as HTMLAudioElement | null
-  );
-
-  const playSqueak = (sound: 'in' | 'out') => {
-    if (playingAudio) {
-      playingAudio.pause();
-      playingAudio.currentTime = 0;
-    }
-
-    const audio = sound === 'in' ? squeakIn : squeakOut;
-    setPlayingAudio(audio);
-    audio.play();
-  };
-
-  return (
-    <Style>
-      <Content>
-        <MainArea>
-          <TextArea>
-            <NameHeader to='/' {...{ variant }}>
-              {'Zack Beach'}
-            </NameHeader>
-            {variant === 'big' && (
-              <AccompanyingText>
-                I'm an urbanism advocate and software developer in Blacksburg,
-                Virginia, USA.
-              </AccompanyingText>
-            )}
-          </TextArea>
+export const Header = ({ variant }: Props) => (
+  <Style>
+    <Content>
+      <MainArea>
+        <TextArea>
+          <NameHeader to='/' {...{ variant }}>
+            {'Zack Beach'}
+          </NameHeader>
           {variant === 'big' && (
-            <ProfileImg
-              src={ZackImg}
-              alt='Zack Beach'
-              draggable={false}
-              onMouseDown={() => playSqueak('in')}
-              onMouseUp={() => playSqueak('out')}
-            />
+            <AccompanyingText>
+              I'm an urbanism advocate and software developer in Blacksburg,
+              Virginia, USA.
+            </AccompanyingText>
           )}
-        </MainArea>
-        <ExternalLinks>
-          <a
-            href='https://www.instagram.com/zack_beach/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img src={InstagramIcon} alt='Instagram' />
-          </a>
-          <a href='https://github.com/zbeach' target='_blank' rel='noreferrer'>
-            <img src={GitHubMark} alt='GitHub' />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/zbeach/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img src={LinkedInIcon} alt='LinkedIn' />
-          </a>
-        </ExternalLinks>
-      </Content>
-    </Style>
-  );
-};
+        </TextArea>
+        {variant === 'big' && (
+          <ProfileImg src={ZackImg} alt='Zack Beach' draggable={false} />
+        )}
+      </MainArea>
+      <ExternalLinks>
+        <a
+          href='https://www.instagram.com/zack_beach/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={InstagramIcon} alt='Instagram' />
+        </a>
+        <a href='https://github.com/zbeach' target='_blank' rel='noreferrer'>
+          <img src={GitHubMark} alt='GitHub' />
+        </a>
+        <a
+          href='https://www.linkedin.com/in/zbeach/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={LinkedInIcon} alt='LinkedIn' />
+        </a>
+      </ExternalLinks>
+    </Content>
+  </Style>
+);
