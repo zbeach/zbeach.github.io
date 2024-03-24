@@ -46,7 +46,9 @@ const ProfileImg = styled.img`
   border-style: solid;
   border-color: var(--default-tertiary-color);
   border-width: 0.5em;
-  box-shadow: 10px 10px 0px 0px rgba(150, 179, 157, 1),
+  box-shadow: 12px 12px 0px 0px rgba(150, 179, 157, 1),
+    11px 11px 0px 0px rgba(150, 179, 157, 1),
+    10px 10px 0px 0px rgba(150, 179, 157, 1),
     9px 9px 0px 0px rgba(150, 179, 157, 1),
     8px 8px 0px 0px rgba(150, 179, 157, 1),
     7px 7px 0px 0px rgba(150, 179, 157, 1),
@@ -67,7 +69,7 @@ const ProfileImg = styled.img`
   &:active {
     box-shadow: 0px 0px 0px 0px rgba(150, 179, 157, 1);
 
-    transform: translate(10px, 10px) rotate(4deg);
+    transform: translate(12px, 12px) rotate(4deg);
   }
 
   @media (max-width: 48.5em) {
@@ -135,7 +137,9 @@ const ExternalLinks = styled.div`
   padding: 0.5em 1.25em;
   border-radius: 999em;
   background-color: var(--default-tertiary-color);
-  box-shadow: 8px 8px 0px 0px rgba(150, 179, 157, 1),
+  box-shadow: 10px 10px 0px 0px rgba(150, 179, 157, 1),
+    9px 9px 0px 0px rgba(150, 179, 157, 1),
+    8px 8px 0px 0px rgba(150, 179, 157, 1),
     7px 7px 0px 0px rgba(150, 179, 157, 1),
     6px 6px 0px 0px rgba(150, 179, 157, 1),
     5px 5px 0px 0px rgba(150, 179, 157, 1),
