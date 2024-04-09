@@ -1,3 +1,3 @@
 My personal website
 
-[zbeach.github.io](https://zbeach.github.io)
+[zbeach.github.io](https://zackbeach.com)
