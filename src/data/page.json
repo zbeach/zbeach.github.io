@@ -34,5 +34,11 @@
     "icon": "🎮",
     "header": "Video games",
     "description": "I play video games. I don't also make them."
+  },
+  {
+    "pageKey": "books",
+    "icon": "📖",
+    "header": "Books",
+    "description": "I pretend to be big into reading."
   }
 ]
