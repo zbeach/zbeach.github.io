@@ -1,17 +1,11 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import ZackImg from './images/zack.jpg';
-import SqueakIn from './sounds/squeak-1.m4a';
-import SqueakOut from './sounds/squeak-2.m4a';
 import InstagramIcon from './images/Instagram_Glyph_Gradient.svg';
 import GitHubMark from './images/github-mark.svg';
 import LinkedInIcon from './images/linkedin.png';
 import { Content } from './content';
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-const squeakIn = new Audio(SqueakIn);
-const squeakOut = new Audio(SqueakOut);
 
 type HeaderVariant = 'big' | 'small';
 
@@ -26,7 +20,7 @@ const Style = styled.div`
   background-color: var(--primary-color);
 `;
 
-const MainArea = styled.div`
+const MainArea = styled.div<Props>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -120,7 +114,7 @@ const AccompanyingText = styled.div`
   }
 `;
 
-const ExternalLinks = styled.div`
+const SocialLinks = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -156,7 +150,7 @@ const ExternalLinks = styled.div`
 export const Header = ({ variant }: Props) => (
   <Style>
     <Content>
-      <MainArea>
+      <MainArea {...{ variant }}>
         <TextArea>
           <NameHeader to='/' {...{ variant }}>
             {'Zack Beach'}
@@ -172,7 +166,7 @@ export const Header = ({ variant }: Props) => (
           <ProfileImg src={ZackImg} alt='Zack Beach' draggable={false} />
         )}
       </MainArea>
-      <ExternalLinks>
+      <SocialLinks>
         <a
           href='https://www.instagram.com/zack_beach/'
           target='_blank'
@@ -190,7 +184,7 @@ export const Header = ({ variant }: Props) => (
         >
           <img src={LinkedInIcon} alt='LinkedIn' />
         </a>
-      </ExternalLinks>
+      </SocialLinks>
     </Content>
   </Style>
 );

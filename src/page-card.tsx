@@ -5,9 +5,9 @@ import { isMobile } from 'react-device-detect';
 import { PageData } from './types';
 
 const Wrapper = styled(Link)`
-  --rotation: ${() =>
+  ${() =>
     css`
-      ${Math.random() * 6 - 2}deg
+      --rotation: ${4 - Math.random() * 8}deg;
     `};
 
   display: flex;
