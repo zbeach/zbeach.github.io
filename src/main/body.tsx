@@ -5,23 +5,16 @@ import { Content } from '../content';
 import { PageData } from '../types';
 
 import pagesData from '../data/page.json';
+import { SocialLinks } from '../social-links';
 
 const Style = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   gap: 2em;
-  margin-top: 1em;
   padding: 3em;
-  color: var(--primary-color);
-`;
-
-const Preface = styled.div`
-  font-size: 2em;
-  font-family: 'Instrument Serif';
-
-  transform: rotate(-2deg);
+  color: rgba(var(--primary-color), 1);
 `;
 
 const Navigation = styled.div`
@@ -38,12 +31,12 @@ const Navigation = styled.div`
 export const Body = () => (
   <Content>
     <Style>
-      <Preface>{'Here are some of the things I do and/or enjoy.'}</Preface>
       <Navigation>
         {(pagesData as PageData[]).map((pageData) => (
           <PageCard {...pageData} />
         ))}
       </Navigation>
+      <SocialLinks />
     </Style>
   </Content>
 );

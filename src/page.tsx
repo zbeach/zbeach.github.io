@@ -6,7 +6,7 @@ const Style = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--secondary-color);
+  background-color: rgba(var(--secondary-color), 1);
 `;
 
 const Centered = styled.div`

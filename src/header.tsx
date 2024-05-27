@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import ZackImg from './images/zack.jpg';
-import InstagramIcon from './images/Instagram_Glyph_Gradient.svg';
-import GitHubMark from './images/github-mark.svg';
-import LinkedInIcon from './images/linkedin.png';
+import BackgroundImg from './images/pattern.png';
 import { Content } from './content';
 
 type HeaderVariant = 'big' | 'small';
@@ -16,17 +13,27 @@ type Props = {
 const Style = styled.div`
   display: flex;
   justify-content: center;
-  padding: 3em 3em 2em 3em;
-  background-color: var(--primary-color);
+  align-items: flex-end;
+  padding: 5em 3em;
+  background-color: rgba(var(--primary-color), 1);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(var(--primary-color), 1),
+      rgba(var(--primary-color), 0.4)
+    ),
+    url(${BackgroundImg});
+  background-size: 40em;
+  background-repeat: repeat;
+  background-attachment: fixed;
 `;
 
 const MainArea = styled.div<Props>`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1em;
   max-width: 100%;
-  color: var(--default-tertiary-color);
+  color: rgba(var(--default-tertiary-color), 1);
 
   @media (max-width: 48.5em) {
     flex-direction: column;
@@ -39,7 +46,7 @@ const ProfileImg = styled.img`
   height: 16em;
   border-radius: 7.5em;
   border-style: solid;
-  border-color: var(--default-tertiary-color);
+  border-color: rgba(var(--default-tertiary-color), 1);
   border-width: 0.5em;
   box-shadow: 12px 12px 0px 0px rgba(150, 179, 157, 1),
     11px 11px 0px 0px rgba(150, 179, 157, 1),
@@ -84,7 +91,7 @@ const NameHeader = styled(Link)<Props>`
   line-height: 0.9em;
   margin: 0;
   text-decoration: none;
-  color: var(--default-tertiary-color);
+  color: rgba(var(--default-tertiary-color), 1);
 
   ${({ variant }) =>
     variant === 'big'
@@ -114,39 +121,6 @@ const AccompanyingText = styled.div`
   }
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1em;
-  align-self: flex-end;
-  align-items: center;
-  padding: 0.5em 1.25em;
-  border-radius: 999em;
-  background-color: var(--default-tertiary-color);
-  box-shadow: 10px 10px 0px 0px rgba(150, 179, 157, 1),
-    9px 9px 0px 0px rgba(150, 179, 157, 1),
-    8px 8px 0px 0px rgba(150, 179, 157, 1),
-    7px 7px 0px 0px rgba(150, 179, 157, 1),
-    6px 6px 0px 0px rgba(150, 179, 157, 1),
-    5px 5px 0px 0px rgba(150, 179, 157, 1),
-    4px 4px 0px 0px rgba(150, 179, 157, 1),
-    3px 3px 0px 0px rgba(150, 179, 157, 1),
-    2px 2px 0px 0px rgba(150, 179, 157, 1),
-    1px 1px 0px 0px rgba(150, 179, 157, 1);
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 2em;
-      height: 2em;
-    }
-  }
-`;
-
 export const Header = ({ variant }: Props) => (
   <Style>
     <Content>
@@ -157,34 +131,12 @@ export const Header = ({ variant }: Props) => (
           </NameHeader>
           {variant === 'big' && (
             <AccompanyingText>
-              I'm an urbanism advocate and software developer in Blacksburg,
-              Virginia, USA.
+              Urbanism advocate and software developer in Blacksburg, Virginia,
+              USA
             </AccompanyingText>
           )}
         </TextArea>
-        {variant === 'big' && (
-          <ProfileImg src={ZackImg} alt='Zack Beach' draggable={false} />
-        )}
       </MainArea>
-      <SocialLinks>
-        <a
-          href='https://www.instagram.com/zack_beach/'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src={InstagramIcon} alt='Instagram' />
-        </a>
-        <a href='https://github.com/zbeach' target='_blank' rel='noreferrer'>
-          <img src={GitHubMark} alt='GitHub' />
-        </a>
-        <a
-          href='https://www.linkedin.com/in/zbeach/'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src={LinkedInIcon} alt='LinkedIn' />
-        </a>
-      </SocialLinks>
     </Content>
   </Style>
 );

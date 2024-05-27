@@ -34,13 +34,13 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     // Colors
-    --default-primary-color: rgb(98, 102, 134);
-    --default-secondary-color: rgb(208, 235, 215);
-    --default-secondary-color-dark: rgb(150, 179, 157);
-    --default-tertiary-color: rgb(224, 235, 227);
+    --default-primary-color: 98, 102, 134;
+    --default-secondary-color: 208, 235, 215;
+    --default-secondary-color-dark: 150, 179, 157;
+    --default-tertiary-color: 224, 235, 227;
 
-    --old-default-primary-color: rgb(69, 73, 108);
-    --old-default-secondary-color: rgb(197, 193, 158);
+    --old-default-primary-color: 69, 73, 108;
+    --old-default-secondary-color: 197, 193, 158;
 
     --primary-color: var(--default-primary-color);
     --secondary-color: var(--default-secondary-color);

@@ -34,7 +34,7 @@ const Style = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-color: var(--primary-color);
+  border-color: rgba(var(--primary-color), 1);
   border-style: solid;
   border-radius: 2em;
   border-width: 3px;
@@ -48,8 +48,8 @@ const Header = styled.div`
   overflow: hidden;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  color: var(--default-tertiary-color);
-  background: var(--primary-color);
+  color: rgba(var(--default-tertiary-color), 1);
+  background: rgba(var(--primary-color), 1);
   font-size: 1.5em;
   text-align: right;
   font-family: 'Spot';
@@ -63,7 +63,7 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--default-tertiary-color);
+  background: rgba(var(--default-tertiary-color), 1);
   border-radius: 100%;
 `;
 
@@ -76,8 +76,8 @@ const Content = styled.div`
   font-family: 'Bricolage Grotesque';
   font-weight: 100;
   font-size: 1.25em;
-  background: var(--default-tertiary-color);
-  color: var(--primary-color);
+  background: rgba(var(--default-tertiary-color), 1);
+  color: rgba(var(--primary-color), 1);
   padding: 0.75em;
 `;
 
