@@ -1,21 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.847a0282.js",
+    "main.js": "/static/js/main.7f69b137.js",
     "static/js/787.7da95b79.chunk.js": "/static/js/787.7da95b79.chunk.js",
     "static/media/Instagram_Glyph_Gradient.svg": "/static/media/Instagram_Glyph_Gradient.39973d93921f387378eb95cb209f4ad7.svg",
     "static/media/DelaGothicOne-Regular.ttf": "/static/media/DelaGothicOne-Regular.a8761c8c6d54ccaa44db.ttf",
     "static/media/BricolageGrotesque-VariableFont.ttf": "/static/media/BricolageGrotesque-VariableFont.23be8732da4e5ebba63a.ttf",
+    "static/media/pattern.png": "/static/media/pattern.ca0d26bbbe9b64355a63.png",
     "static/media/InstrumentSerif-Regular.ttf": "/static/media/InstrumentSerif-Regular.dd726bb91a354547f0d3.ttf",
-    "static/media/zack.jpg": "/static/media/zack.b1de941f22cc98bdd7a2.jpg",
     "static/media/spot-normal.ttf": "/static/media/spot-normal.c4e9fb6e9ce0c35215d7.ttf",
-    "static/media/squeak-1.m4a": "/static/media/squeak-1.472c0e2cc4b724673279.m4a",
-    "static/media/squeak-2.m4a": "/static/media/squeak-2.a0092a3df992c6964dd2.m4a",
     "static/media/github-mark.svg": "/static/media/github-mark.af428d1f37c00e285a40a68689f65f74.svg",
     "index.html": "/index.html",
-    "main.847a0282.js.map": "/static/js/main.847a0282.js.map",
+    "main.7f69b137.js.map": "/static/js/main.7f69b137.js.map",
     "787.7da95b79.chunk.js.map": "/static/js/787.7da95b79.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.847a0282.js"
+    "static/js/main.7f69b137.js"
   ]
 }
