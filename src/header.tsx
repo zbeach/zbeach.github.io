@@ -14,7 +14,7 @@ const Style = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 5em 3em;
+  padding: 4em 3em;
   background-color: rgba(var(--primary-color), 1);
   background-image: linear-gradient(
       to bottom,
