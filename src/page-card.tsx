@@ -53,7 +53,7 @@ const Header = styled.div`
   font-size: 1.5em;
   text-align: right;
   font-family: 'Spot';
-  padding: 0.25em 0.5em;
+  padding: 0.25em;
 `;
 
 const Icon = styled.div`
