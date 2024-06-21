@@ -10,16 +10,16 @@ type Props = {
   variant: HeaderVariant;
 };
 
-const Style = styled.div`
+const Style = styled.div<Props>`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 4em 3em;
+  padding: ${({ variant }) => variant === 'small' ? '3em' : '4em'} 3em;
   background-color: rgba(var(--primary-color), 1);
   background-image: linear-gradient(
       to bottom,
-      rgba(var(--primary-color), 1),
-      rgba(var(--primary-color), 0.4)
+      rgba(var(--primary-color), 0.9),
+      rgba(var(--primary-color), 0.9)
     ),
     url(${BackgroundImg});
   background-size: 40em;
@@ -38,42 +38,6 @@ const MainArea = styled.div<Props>`
   @media (max-width: 48.5em) {
     flex-direction: column;
     align-items: center;
-  }
-`;
-
-const ProfileImg = styled.img`
-  width: 16em;
-  height: 16em;
-  border-radius: 7.5em;
-  border-style: solid;
-  border-color: rgba(var(--default-tertiary-color), 1);
-  border-width: 0.5em;
-  box-shadow: 12px 12px 0px 0px rgba(150, 179, 157, 1),
-    11px 11px 0px 0px rgba(150, 179, 157, 1),
-    10px 10px 0px 0px rgba(150, 179, 157, 1),
-    9px 9px 0px 0px rgba(150, 179, 157, 1),
-    8px 8px 0px 0px rgba(150, 179, 157, 1),
-    7px 7px 0px 0px rgba(150, 179, 157, 1),
-    6px 6px 0px 0px rgba(150, 179, 157, 1),
-    5px 5px 0px 0px rgba(150, 179, 157, 1),
-    4px 4px 0px 0px rgba(150, 179, 157, 1),
-    3px 3px 0px 0px rgba(150, 179, 157, 1),
-    2px 2px 0px 0px rgba(150, 179, 157, 1),
-    1px 1px 0px 0px rgba(150, 179, 157, 1);
-  margin: 1em;
-  transform: rotate(4deg);
-  transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
-
-  @media (max-width: 48.5em) {
-    width: 12em;
-    height: 12em;
-    border-radius: 5.625em;
-  }
-
-  @media (max-width: 37em) {
-    width: 10em;
-    height: 10em;
-    border-radius: 4.6875em;
   }
 `;
 
@@ -122,7 +86,7 @@ const AccompanyingText = styled.div`
 `;
 
 export const Header = ({ variant }: Props) => (
-  <Style>
+  <Style {...{ variant }}>
     <Content>
       <MainArea {...{ variant }}>
         <TextArea>

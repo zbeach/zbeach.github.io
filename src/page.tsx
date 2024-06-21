@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import { Header } from './header';
 import { PageData } from './types';
+import { useEffect } from 'react';
+
+type Props = PageData & {
+  onLoad: () => void;
+};
 
 const Style = styled.div`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-  min-height: 100vh;
   background-color: rgba(var(--secondary-color), 1);
 `;
 
@@ -14,9 +18,14 @@ const Centered = styled.div`
   justify-content: center;
 `;
 
-export const Page = (props: PageData) => (
-  <Style>
-    <Header variant='small' />
-    <Centered>{''}</Centered>
-  </Style>
-);
+export const Page = ({ onLoad }: Props) => {
+  useEffect(() => {
+    onLoad();
+  }, []);
+
+  return (
+    <Style>
+      <Centered>{''}</Centered>
+    </Style>
+  );
+};

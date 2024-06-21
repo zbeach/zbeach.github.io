@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import { Header } from '../header';
 import { Body } from './body';
-import { SocialLinks } from '../social-links';
+import { useEffect } from 'react';
+
+type Props = {
+  onLoad: () => void;
+};
 
 const Style = styled.div`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-  min-height: 100vh;
   background-color: rgba(var(--secondary-color), 1);
 `;
 
@@ -15,11 +18,16 @@ const Centered = styled.div`
   justify-content: center;
 `;
 
-export const Main = () => (
-  <Style>
-    <Header variant='big' />
-    <Centered>
-      <Body />
-    </Centered>
-  </Style>
-);
+export const Main = ({ onLoad }: Props) => {
+  useEffect(() => {
+    onLoad();
+  }, []);
+
+  return (
+    <Style>
+      <Centered>
+        <Body />
+      </Centered>
+    </Style>
+  );
+};

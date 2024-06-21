@@ -7,11 +7,10 @@ import LinkedInIcon from './images/linkedin.png';
 const Style = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 1.25em;
+  justify-content: center;
+  gap: 2em;
   align-items: center;
-  padding: 0.5em 2em;
-  border-radius: 999em;
+  padding: 0.75em 0em;
   background-color: white;
 
   a {

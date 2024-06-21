@@ -33,10 +33,9 @@ export const Body = () => (
     <Style>
       <Navigation>
         {(pagesData as PageData[]).map((pageData) => (
-          <PageCard {...pageData} />
+          <PageCard key={pageData.pageKey} {...pageData} />
         ))}
       </Navigation>
-      <SocialLinks />
     </Style>
   </Content>
 );
