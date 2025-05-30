@@ -14,7 +14,7 @@ const Style = styled.div<Props>`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: ${({ variant }) => variant === 'small' ? '3em' : '4em'} 3em;
+  padding: ${({ variant }) => (variant === 'small' ? '3em' : '4em')} 3em;
   background-color: rgba(var(--primary-color), 1);
   background-image: linear-gradient(
       to bottom,
@@ -95,8 +95,7 @@ export const Header = ({ variant }: Props) => (
           </NameHeader>
           {variant === 'big' && (
             <AccompanyingText>
-              Urbanism advocate and software developer in Blacksburg, Virginia,
-              USA
+              Urbanism advocate and software developer in Chicago
             </AccompanyingText>
           )}
         </TextArea>
